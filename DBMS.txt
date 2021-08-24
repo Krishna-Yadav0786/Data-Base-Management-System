@@ -1,7 +1,6 @@
-9/aug/2021
 
-Constraints -- constraints are the predefined rule which we can validate the record.That                          mean with the help of constraints , we can restricts the value in a                                         database. It is integrity constrains.
-                        It is following types --
+Constraints -- constraints are the predefined rule which we can validate the record.That mean with the help of constraints , we can restricts the value in a                                    database. It is integrity constrains.
+               It is following types --
 
 1) Primary key :- Unique + Null not accepted.
 
@@ -16,20 +15,19 @@ Constraints -- constraints are the predefined rule which we can validate the rec
 6) Foregin key :- It is used to join more than two table.
 
 * Note :- 
-	Primary key = unique + not null
+	   Primary key = unique + not null
 
 * Example :- Id , Roll Number , Adhar Card
 
-10/aug/2021
 
 	                              Syntax to apply constraints --
-		______________________________________
+		                  ______________________________________
 
-* create table tName (cName dType(size) constraints , cName dType(size) constarints ,        .....................);
+* create table tName (cName dType(size) constraints , cName dType(size) constarints ,.....................);
 
 		                        Special Operator --
 
-		________________________________________
+		              ________________________________________
 
 1) like
 2) not like
@@ -40,16 +38,16 @@ Constraints -- constraints are the predefined rule which we can validate the rec
 
 1) like :- It is used to display a data with specified pattern.
 
-* Example :- If we want to display contact no of whose name end with 'st' so in this case                         we use like operator.
+* Example :- If we want to display contact no of whose name end with 'st' so in this case we use like operator.
 
 * Syntax :- select *from tName  where cName like '%pattern%';
-                   where % represent the remaining chat
+            where % represent the remaining chat
 
 * Example :- select *from stut where name like 'A%t';
 
 * Note :- underscore(_) matches any single character.
 
-* Query :- WAQ to display name , id and age of where student whose name last 3rd                   character is 'm'?
+* Query :- WAQ to display name , id and age of where student whose name last 3rd character is 'm'?
 
 * Question :- strat 2nd letter 'u' and ending 2nd letter 'i' ? 
 
@@ -73,27 +71,26 @@ Constraints -- constraints are the predefined rule which we can validate the rec
 
 4) Not in operator :- It is opposite of in operator.
 
-5) Between Operator :- between operator is used to display the record between two                                         given values.It also display the record of the given values.
+5) Between Operator :- between operator is used to display the record between two given values.It also display the record of the given values.
 
 * Example :- select *from stut where age between 15 and 22;
 * It also display the record of age 15 and 22;
 
-13/aug/2021
 
 			Functions In Oracle :--
-		           ____________________________
+		     ____________________________
 
 * String Function --
 
 1) upper() :- It converts given string in upper case.
 
 * Syntax :-
-	a) select upper('string') from dual;
-	b) select upper (cName) from tName;
+	    a) select upper('string') from dual;
+	    b) select upper (cName) from tName;
 
 2) lower() :- It converts given charcter in lower case.
 
-3) initcap() :- Converts the first charcter in each word of the given string in capital and 	     the rest to lower case.
+3) initcap() :- Converts the first charcter in each word of the given string in capital and the rest to lower case.
 
 4) length() :- It counts the length of given string.
 
@@ -111,39 +108,36 @@ Constraints -- constraints are the predefined rule which we can validate the rec
 
 14/aug/2021
 
-* Note :- with the help of || symbol,we can concatenate more than two strings without                        using concat function.
+* Note :- with the help of || symbol,we can concatenate more than two strings without using concat function.
 
 * Syntax :-
-	 select ('value1' || 'value2' || 'value3'.........) from dual;
+	    select ('value1' || 'value2' || 'value3'.........) from dual;
 
 11) instr() :- It return the location of substring in a given string.
-	   but it always display the location of first substring present in the string.
+	       but it always display the location of first substring present in the string.
 
 * Syntax :-
-	 select instr('string','substring') from dual;
+	    select instr('string','substring') from dual;
 
 12) substr() :- return subtring from the given string.
 
 * Syntax :-
-	  ('string',starting position, no of char)
-	   select substr('this is a pen',5,4) from dual;
-
-16/aug/2021
+	    ('string',starting position, no of char)
+	     select substr('this is a pen',5,4) from dual;
 
 13) replace() :-It is used to replace a string with the new string.
 
 * Syntax :-	
-	  select replace('string','replaced string','new string') from dual;
+	    select replace('string','replaced string','new string') from dual;
 
 14) translate() :- Replace all the occurence of the charcter by other charcters in a string.
 
 * Syntax :-
-	 select translate('string','replaced string','new string') from dual;
+	    select translate('string','replaced string','new string') from dual;
 
-17/aug/2021
 
 *		                 Maths Function In Oracle : --
- 		__________________________________________
+ 		          __________________________________________
 
 1) abs() -- It returns absolute(+ve) value of the given value.
 
@@ -197,7 +191,7 @@ Example :- select ln(2) from dual; // .693147181
 
 
 *	                   Date Function And Conversion Function :--
-	_______________________________________________________
+	           _______________________________________________________
 
 1) sysdate -- It is used to display the current system date.
 
@@ -228,13 +222,11 @@ Synatx :- (ii) select months_between(sysdate,'date') from dual;
 Example :-(i) select months_between('24-aug-21','24-oct-21') from dual; // -2
 Example :-(ii) select months_between(sysdate,'24-cot-21') from dual; // -2
 
-Note :- It subtract 2nd date from the first date,and to get always negetive result we use              abs().
+Note :- It subtract 2nd date from the first date,and to get always negetive result we use abs().
 
 Query :- Write a query your current age in year.
 
 Solution :- select abs(months_between(sysdate,'02-jul-00')) from dual; //253.727622
-
-21/aug/2021
 
 * order by :- It is used to display the given date in ascending or desending order.
 
@@ -242,17 +234,16 @@ Syntax :- select *from tName where condition order by cName ASC/DEC;
 Example :- select *from best_friends where (age<21) order by name asc;
 
 Note :- ASC = ascending order and desc - desending order.
-            by default order by display the date in ascending order.
+        by default order by display the date in ascending order.
 
 Query(1) :- Write a query to display record of those emp who are more experienced.
-Query(2) :- Write a query to display the id and name of those emp whose city kanpur                      and post manager.
+Query(2) :- Write a query to display the id and name of those emp whose city kanpur and post manager.
 Query(3) :- Write a query  to find the  record of max salary emp.
 Query(4) :- Write a query  to find emp details according to their hiring.
 
-23/aug/2021
 
 *	                         Date Function & Conversion Function :-
-	              ___________________________________________
+	                      ___________________________________________
 
 1) to_char() :- It is used to convert date value to a string in a specified date.
 
@@ -265,7 +256,7 @@ Example :- (iii) select to_char(sysdate,'DL') from dual; // Tuesday, August 24, 
 
 Query :- Display the dayName of given date.
  
-Note :- If we want to display long date then in to_char() we use 'DL' in place of string             format.
+Note :- If we want to display long date then in to_char() we use 'DL' in place of string format.
 
 2) to_date() :- It is used to convert any string value in specified date value.
 
@@ -292,14 +283,14 @@ Solution :-(i) select count(sr_no) from best_friends;
 Solution :-(ii) select count(*) from best_friends;
 
 Syntax :-(2) select gf(cName) from tName group by cName;
-                     select cName,gf(cName) from group by cName;
+             select cName,gf(cName) from group by cName;
 
 Query :- Write a query to total number of student in all courses?
 Solution :- select Course,count(s_id) from stut group by Course;
 
 Syntax :-(3) select cName,gf(cName) from tName group by cName having condition;
 Note :- For any condition in group by we always use having clause in the place of 'where'
-             clause.
+        clause.
 
 
 
