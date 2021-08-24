@@ -1,0 +1,317 @@
+9/aug/2021
+
+Constraints -- constraints are the predefined rule which we can validate the record.That                          mean with the help of constraints , we can restricts the value in a                                         database. It is integrity constrains.
+                        It is following types --
+
+1) Primary key :- Unique + Null not accepted.
+
+2) Unique :- Unique + Null accepted.
+
+3) Not null :- It not accept null value.
+
+4) Check :- It is used to check value with predefined value.
+
+5) Default :- With the help of default , we can set any value of column.
+
+6) Foregin key :- It is used to join more than two table.
+
+* Note :- 
+	Primary key = unique + not null
+
+* Example :- Id , Roll Number , Adhar Card
+
+10/aug/2021
+
+	                              Syntax to apply constraints --
+		______________________________________
+
+* create table tName (cName dType(size) constraints , cName dType(size) constarints ,        .....................);
+
+		                        Special Operator --
+
+		________________________________________
+
+1) like
+2) not like
+3) in
+4) not in
+5) between
+6) not between
+
+1) like :- It is used to display a data with specified pattern.
+
+* Example :- If we want to display contact no of whose name end with 'st' so in this case                         we use like operator.
+
+* Syntax :- select *from tName  where cName like '%pattern%';
+                   where % represent the remaining chat
+
+* Example :- select *from stut where name like 'A%t';
+
+* Note :- underscore(_) matches any single character.
+
+* Query :- WAQ to display name , id and age of where student whose name last 3rd                   character is 'm'?
+
+* Question :- strat 2nd letter 'u' and ending 2nd letter 'i' ? 
+
+* Note :- To display all the tables of database.
+
+* Syntax :- select *from tab;
+
+2) not like :- It is reverse of like operator.
+
+* Example :- WAQ to display all the records whose name not start with 'A' ?
+
+12/aug/2021
+
+3) In operator :- in operator is used to determine a value matches any given list of values
+
+* Syntax :- select *from tName where cName in (value1 , value2 , value3 ,.........);
+
+* Example :- WAQ to display record of students whose id is either 101 or 104 or 106 ?
+
+* select *from stut where id in(101,104,106);
+
+4) Not in operator :- It is opposite of in operator.
+
+5) Between Operator :- between operator is used to display the record between two                                         given values.It also display the record of the given values.
+
+* Example :- select *from stut where age between 15 and 22;
+* It also display the record of age 15 and 22;
+
+13/aug/2021
+
+			Functions In Oracle :--
+		           ____________________________
+
+* String Function --
+
+1) upper() :- It converts given string in upper case.
+
+* Syntax :-
+	a) select upper('string') from dual;
+	b) select upper (cName) from tName;
+
+2) lower() :- It converts given charcter in lower case.
+
+3) initcap() :- Converts the first charcter in each word of the given string in capital and 	     the rest to lower case.
+
+4) length() :- It counts the length of given string.
+
+5) ltrim() :- It is used to remove the left space in the given string.
+
+6) rtrim() :- It is used to remove the right space in the given string.
+
+7) trim() :- It is used to remove left as well as right space in the given string.
+
+8) Ascii() :- Returns an ASCII code value of the given charcter.
+
+9) chr() :- provide charcter value.
+
+10) concat() :-It concatenate two strings and return the combined string.
+
+14/aug/2021
+
+* Note :- with the help of || symbol,we can concatenate more than two strings without                        using concat function.
+
+* Syntax :-
+	 select ('value1' || 'value2' || 'value3'.........) from dual;
+
+11) instr() :- It return the location of substring in a given string.
+	   but it always display the location of first substring present in the string.
+
+* Syntax :-
+	 select instr('string','substring') from dual;
+
+12) substr() :- return subtring from the given string.
+
+* Syntax :-
+	  ('string',starting position, no of char)
+	   select substr('this is a pen',5,4) from dual;
+
+16/aug/2021
+
+13) replace() :-It is used to replace a string with the new string.
+
+* Syntax :-	
+	  select replace('string','replaced string','new string') from dual;
+
+14) translate() :- Replace all the occurence of the charcter by other charcters in a string.
+
+* Syntax :-
+	 select translate('string','replaced string','new string') from dual;
+
+17/aug/2021
+
+*		                 Maths Function In Oracle : --
+ 		__________________________________________
+
+1) abs() -- It returns absolute(+ve) value of the given value.
+
+Syntax :-  select abs(value) from dual;
+Example :- select abs(-5) from dual; // 5
+
+2) power() -- It returns power of given value.
+
+Syntax :- select power(base,power) from dual;
+Example :- select power(3,2) from dual;  //9
+
+3) mod() -- It returns remainder value.
+
+Syntax :- select mod(dividend,divisor) from dual;
+Example :- select mod(10,3) from dual;  // 1
+
+4) sqrt() :- calculate the square root.
+
+Syntax :- select sqrt(value) from dual;
+Example :- select sqrt(9) from dual; // 3
+
+5) trunc() :- It is used to truncate the given value upto given certain decimal number.
+
+Syntax :-  select trunc(value,number of digits) from dual;
+Example :- select trunc(34.3456, 3) from dual; // 34.345
+
+6) round() :- It returns rounded off value of given value.
+
+Syntax:- select round(value,number of digits) from dual;
+Example :- select round(34.3456, 3) from dual; // 34.346
+
+7) floor() :-
+
+Synatx :- select floor(value) from dual;
+Example :- select floor(3.5) from dual; // 3
+ 
+8) ceil() :-
+
+Synatx :- select ceil(value) from dual;
+Example :- select ceil(3.5) from dual; // 4
+
+9) log() :- It is used to find any log value by using any base.
+
+Synatx :- select log(base,value) from dual;
+Example :- select log(10,2) from dual; // .301029996
+
+10) ln() :- It is used to find the log value by using natural base (base e).
+
+Synatx :- select ln(value) from dual;
+Example :- select ln(2) from dual; // .693147181
+
+
+*	                   Date Function And Conversion Function :--
+	_______________________________________________________
+
+1) sysdate -- It is used to display the current system date.
+
+Synatx :- select sysdate from dual;
+Example :- select sysdate from dual; // 24-aug-21
+
+2) current_date -- It is used to display the current system date.
+
+Synatx :- select current_date from dual;
+Example :- select current_date from dual; // 24-aug-21
+
+3) systimestamp :- It display current system date with time and time zone.
+
+Synatx :- select systimestamp from dual;
+Example :- select systimestamp from dual; // 24-aug-21 01.00.31.974000 PM +05:30
+
+4) last_day() -- It is used to display last date of the given month.
+
+Synatx :- (i) select last_date('date') from dual;
+Synatx :- (ii) select last_date(sysdate) from dual;
+Example :-(i) select last_date('24-aug-21') from dual; // 31-aug-21
+Example :-(ii) select last_date(sysdate) from dual; // 31-aug-21
+
+5) months_between() :- It is used to determine the number of months between two dates.
+
+Synatx :- (i) select months_between('date','date') from dual;
+Synatx :- (ii) select months_between(sysdate,'date') from dual;
+Example :-(i) select months_between('24-aug-21','24-oct-21') from dual; // -2
+Example :-(ii) select months_between(sysdate,'24-cot-21') from dual; // -2
+
+Note :- It subtract 2nd date from the first date,and to get always negetive result we use              abs().
+
+Query :- Write a query your current age in year.
+
+Solution :- select abs(months_between(sysdate,'02-jul-00')) from dual; //253.727622
+
+21/aug/2021
+
+* order by :- It is used to display the given date in ascending or desending order.
+
+Syntax :- select *from tName where condition order by cName ASC/DEC;
+Example :- select *from best_friends where (age<21) order by name asc;
+
+Note :- ASC = ascending order and desc - desending order.
+            by default order by display the date in ascending order.
+
+Query(1) :- Write a query to display record of those emp who are more experienced.
+Query(2) :- Write a query to display the id and name of those emp whose city kanpur                      and post manager.
+Query(3) :- Write a query  to find the  record of max salary emp.
+Query(4) :- Write a query  to find emp details according to their hiring.
+
+23/aug/2021
+
+*	                         Date Function & Conversion Function :-
+	              ___________________________________________
+
+1) to_char() :- It is used to convert date value to a string in a specified date.
+
+Syntax :-(i) select to_char(sysdate,'string') from dual;
+Syntax :-(ii) select to_char(sysdate,'day') from dual;
+Syntax :-(iii) select to_char(sysdate,'DL') from dual;
+Example :-(i) select to_char(sysdate,'yyyy/mm/dd') from dual; // 2021/08/24
+Example :- (ii) select to_char(sysdate,'day') from dual; // tuesday
+Example :- (iii) select to_char(sysdate,'DL') from dual; // Tuesday, August 24, 2021
+
+Query :- Display the dayName of given date.
+ 
+Note :- If we want to display long date then in to_char() we use 'DL' in place of string             format.
+
+2) to_date() :- It is used to convert any string value in specified date value.
+
+Synatx :- select to_date('string formate','specify the formate') from dual;
+Example :- select to_date('240821','ddmmyy') from dual; // 24-aug-21
+
+3) Aggreate function :- A function that returns a single result to the entire value.
+
+i>  min()
+ii> max()
+iii>count()
+iv>sum()
+v> avg()
+
+24/aug/2021
+
+Syntax Of Group Function :--
+
+Syntax :-(1) select gf(cName) from tName;  // gf(group function)
+
+Query :- Write a query to count max age?
+
+Solution :-(i) select count(sr_no) from best_friends;
+Solution :-(ii) select count(*) from best_friends;
+
+Syntax :-(2) select gf(cName) from tName group by cName;
+                     select cName,gf(cName) from group by cName;
+
+Query :- Write a query to total number of student in all courses?
+Solution :- select Course,count(s_id) from stut group by Course;
+
+Syntax :-(3) select cName,gf(cName) from tName group by cName having condition;
+Note :- For any condition in group by we always use having clause in the place of 'where'
+             clause.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
