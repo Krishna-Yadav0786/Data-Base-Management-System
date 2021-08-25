@@ -59,8 +59,6 @@ Constraints -- constraints are the predefined rule which we can validate the rec
 
 * Example :- WAQ to display all the records whose name not start with 'A' ?
 
-12/aug/2021
-
 3) In operator :- in operator is used to determine a value matches any given list of values
 
 * Syntax :- select *from tName where cName in (value1 , value2 , value3 ,.........);
